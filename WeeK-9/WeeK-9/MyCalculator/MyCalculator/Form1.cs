@@ -96,21 +96,29 @@ namespace MyCalculator
         private void result_click(object sender, EventArgs e)
         {
             ecnt++;
-            if (ecnt == 1)
+            if (display.Text == "")
             {
-                calc.second_number = double.Parse(display.Text);
+                calc.second_number = calc.first_number;
                 calc.calculate();
                 display.Text = calc.result.ToString();
-                d = calc.second_number;
             }
             else
             {
-                calc.first_number = double.Parse(display.Text);
-                calc.second_number = d;
-                calc.calculate();
-                display.Text = calc.result.ToString();
+                if (ecnt == 2)
+                {
+                    calc.second_number = double.Parse(display.Text);
+                    calc.calculate();
+                    display.Text = calc.result.ToString();
+                    d = calc.second_number;
+                }
+                else
+                {
+                    calc.first_number = double.Parse(display.Text);
+                    calc.second_number = d;
+                    calc.calculate();
+                    display.Text = calc.result.ToString();
+                }
             }
-
 
             zcnt = 0;
         }
@@ -177,7 +185,7 @@ namespace MyCalculator
 
                     break;
                 case "MC":
-                    display.Text = "0";
+                    //display.Text = "0";
                     m = 0;
                     label1.Text = "";
 
@@ -186,13 +194,13 @@ namespace MyCalculator
                     display.Text = m.ToString();
                     break;
                 case "M+":
-                    display.Text = "0";
+                    
                     label1.Text = "M";
                     m += double.Parse(display.Text);
 
                     break;
                 case "M-":
-                    display.Text = "0";
+                   
                     label1.Text = "M";
                     m -= double.Parse(display.Text);
                     break;
