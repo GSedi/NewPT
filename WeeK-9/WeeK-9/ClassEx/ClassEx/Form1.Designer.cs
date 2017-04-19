@@ -1,4 +1,4 @@
-﻿namespace Asteroid
+﻿namespace ClassEx
 {
     partial class Form1
     {
@@ -40,17 +40,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 612);
+            this.ClientSize = new System.Drawing.Size(533, 280);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.Timer timer1;
     }
 }
